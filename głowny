@@ -905,27 +905,28 @@ local function FullBright_Disable()
 	Lighting.FogEnd = OriginalValues.FogEnd
 end
 
---============================ Camera FOV ============================--
+-- ============================ Camera FOV (Naprawione) ============================ --
 local Fov_Enabled = false
-local Fov_Value = 80  -- Ustaw domyślną wartość FOV, którą chcesz mieć po włączeniu
+local Fov_Value = 80
 local Camera = game.Workspace.Camera
 local Original_Fov = Camera.FieldOfView
 
 local function Fov_Enable()
-    if Fov_Enabled then
-        return
-    end
     Fov_Enabled = true
-    Camera.FieldOfView = Fov_Value
 end
 
 local function Fov_Disable()
-    if not Fov_Enabled then
-        return
-    end
     Fov_Enabled = false
     Camera.FieldOfView = Original_Fov
 end
+
+-- Pętla, która wymusza stałą wartość FOV
+game:GetService("RunService").RenderStepped:Connect(function()
+    if Fov_Enabled then
+        -- Wymusza FOV na 80, ignorując inne zmiany
+        Camera.FieldOfView = Fov_Value
+    end
+end)
 
 --============================ Noclip ============================--
 -- Serwisy Roblox
