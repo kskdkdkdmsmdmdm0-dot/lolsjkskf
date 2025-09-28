@@ -905,18 +905,59 @@ local function FullBright_Disable()
 	Lighting.FogEnd = OriginalValues.FogEnd
 end
 
--- Poniżej znajduje się przykład, jak przełączać efekt za pomocą klawisza
+--============================ Camera FOV ============================--
+local Fov_Enabled = false
+local Fov_Value = 80  -- Ustaw domyślną wartość FOV, którą chcesz mieć po włączeniu
+local Camera = game.Workspace.Camera
+local Original_Fov = Camera.FieldOfView
+
+local function Fov_Enable()
+    if Fov_Enabled then
+        return
+    end
+    Fov_Enabled = true
+    Camera.FieldOfView = Fov_Value
+end
+
+local function Fov_Disable()
+    if not Fov_Enabled then
+        return
+    end
+    Fov_Enabled = false
+    Camera.FieldOfView = Original_Fov
+end
+
+-- Poniżej znajduje się przykład, jak przełączać efekt za pomocą klawisza 'K'
+-- i zmieniać wartość FOV za pomocą klawiszy 'L' i 'P'.
 local UserInputService = game:GetService("UserInputService")
 UserInputService.InputBegan:Connect(function(input, gameProcessed)
-	if gameProcessed then return end
-	
-	if input.KeyCode == Enum.KeyCode.K then
-		if FullBright_Enabled then
-			FullBright_Disable()
-		else
-			FullBright_Enable()
-		end
-	end
+    if gameProcessed then
+        return
+    end
+    
+    if input.KeyCode == Enum.KeyCode.K then
+        if Fov_Enabled then
+            Fov_Disable()
+        else
+            Fov_Enable()
+        end
+    end
+    
+    -- Zwiększ FOV o 5
+    if input.KeyCode == Enum.KeyCode.L then
+        Fov_Value = math.min(120, Fov_Value + 5) -- Maksymalna wartość FOV to 120
+        if Fov_Enabled then
+            Camera.FieldOfView = Fov_Value
+        end
+    end
+    
+    -- Zmniejsz FOV o 5
+    if input.KeyCode == Enum.KeyCode.P then
+        Fov_Value = math.max(10, Fov_Value - 5) -- Minimalna wartość FOV to 10
+        if Fov_Enabled then
+            Camera.FieldOfView = Fov_Value
+        end
+    end
 end)
 
 --============================ Noclip ============================--
@@ -3481,6 +3522,7 @@ EQR_UI.DefaultCategory = "Combat"
 -- Tabela z keybindami, teraz jako część głównego obiektu UI
 EQR_UI.KeyBinds = {
     fly = Fly_Bind,
+    fov = fov_Bind,
     noclip = Noclip_Bind,
     FullBright = FullBright_Bind,
     autofarm = Autofarm_Bind,
@@ -3689,6 +3731,7 @@ function EQR_UI:Initialize()
     table.insert(self.CategoryFrames.Visuals, createToggleRowFrame("Invisibility", true, _G.IsInvisEnabled, _G.Invis_Enable, _G.Invis_Disable, function() return k.invis end, function(val) k.invis=val end))
     table.insert(self.CategoryFrames.Visuals, createToggleRowFrame("Safe ESP", true, function() return BredMakurz_Enabled end, BredMakurz_Enable, BredMakurz_Disable, function() return k.safeESP end, function(val) k.safeESP=val end))
     table.insert(self.CategoryFrames.Visuals, createToggleRowFrame("FullBright", true, function() return FullBright_Enabled end, FullBright_Enable, FullBright_Disable, function() return k.FullBright end, function(val) k.FullBright=val; FulLBright_Bind=val end))
+    table.insert(self.CategoryFrames.Visuals, createToggleRowFrame("FOV", true, function() return Fov_Enabled end, Fov_Enable, Fov_Disable, function() return k.fov end, function(val) k.fov=val; fov=val end))
 
     -- Farming
     table.insert(self.CategoryFrames.Farming, createToggleRowFrame("Autofarm", true, function() return autofarmEnabled end, Autofarm_Enable, Autofarm_Disable, function() return k.autofarm end, function(val) k.autofarm=val; Autofarm_Bind=val end))
