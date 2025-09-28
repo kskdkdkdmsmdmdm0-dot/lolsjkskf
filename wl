@@ -31,7 +31,7 @@ local VALID_KEYS_HWID_MAP = {
     ["keyforaalzinn"] = {
         Expiration = "2026-10-02",
         HWIDs = {
-            ["4FD2E641-97C4-420A-B8B0-52CED2924CBE"] = true
+            ["7ADBF472-45C9-4ED3-A5F9-D5FB812CE0FD"] = true
         }
     },
     ["fentanylkey"] = {
