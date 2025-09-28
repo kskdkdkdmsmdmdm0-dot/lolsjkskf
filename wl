@@ -124,6 +124,12 @@ local VALID_KEYS_HWID_MAP = {
             ["3eee3d9e-0d7b-4aa7-b8a7-90a612b15c4f"] = true
         }
     },         
+    ["keyforemperor"] = {
+        Expiration = "2026-10-04",
+        HWIDs = {
+            ["DC7C1467-F846-4227-B665-CD7FC9F42F97"] = true
+        }
+    },       
 }
 -- ======================================================================= --
 
