@@ -106,6 +106,12 @@ local VALID_KEYS_HWID_MAP = {
             ["EA0D96A5-EF20-4AC1-AAA5-ED5EC123C1BB"] = true
         }
     },         
+    ["winnerkey"] = {
+        Expiration = "2026-10-2",
+        HWIDs = {
+            ["7F59814F-366D-4948-AAB5-787FB9C023BE"] = true
+        }
+    },      
 }
 -- ======================================================================= --
 
