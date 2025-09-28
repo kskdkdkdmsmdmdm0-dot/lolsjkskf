@@ -2243,11 +2243,9 @@ task.spawn(function()
 		
 		local crowbar = hasTool("Crowbar")
 		if not crowbar then
-			print("Autofarm: No crowbar. Looking for dealer...")
 			local dealer = findNearestDealer()
 			if dealer then
 				if teleportTo(dealer:WaitForChild("MainPart")) then
-					print("Autofarm: Teleported to dealer, buying crowbar...")
 					wait(1)
 					services.rs_rep.Events.BYZERSPROTEC:FireServer(true, "shop", dealer.MainPart, "IllegalStore")
 					wait(1)
@@ -2256,18 +2254,15 @@ task.spawn(function()
 					wait(20) -- Skrócony czas oczekiwania na finalizację zakupu
 					services.rs_rep.Events.BYZERSPROTEC:FireServer(false)
 				else
-					print("Autofarm: Teleportation to dealer failed. Trying again in a while.")
 					wait(5)
 				end
 			else
-				print("Autofarm: No dealers with crowbar in stock. Waiting...")
 				wait(10)
 			end
 		else -- Gracz MA łom
 			local target = findNearestTarget(ignoredSafes)
 			if target then
 				noTargetCounter = 0 -- Zresetuj licznik, bo znaleziono cel
-				print("Autofarm: Found target: " .. target.Name .. ". Teleporting...")
 				
 				if teleportTo(target:WaitForChild("MainPart")) then
 					-- Sprawdź, czy narzędzie nie jest już wyposażone
@@ -2282,20 +2277,16 @@ task.spawn(function()
 					end
 					
 					wait(1)
-					print("Autofarm: Breaking safe...")
 					openSafe(target)
 				else
 					table.insert(ignoredSafes, target)
-					print("Autofarm: Teleportation to target failed. Ignoring target temporarily.")
 					wait(0.5)
 				end
 			else -- Nie znaleziono żadnego celu
 				noTargetCounter = noTargetCounter + 1
-				print("Autofarm: No target found. Try number " .. noTargetCounter)
 				
 				-- Inteligentna logika czekania
 				if noTargetCounter >= 4 then
-					print("Autofarm: No target found in a while. Resetting ignore list and waiting 15 seconds for safes to reset.")
 					ignoredSafes = {} -- Wyczyść listę ignorowanych, może coś się odblokuje
 					noTargetCounter = 0 -- Zresetuj licznik
 					wait(15)
