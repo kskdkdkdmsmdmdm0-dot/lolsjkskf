@@ -833,64 +833,6 @@ local function Fly_Disable()
     end
 end
 
---============================ No Fall Damage ============================--
-local NoFallDamage_Enabled = false
-local Connection = nil
-local MT = getrawmetatable(game)
-setreadonly(MT, false)
-local NameCall = MT.__namecall
-
-local function NoFallDamage_Enable()
-	if NoFallDamage_Enabled then
-		return
-	end
-	NoFallDamage_Enabled = true
-	
-	-- Używa metatabeli, aby przechwycić wywołania zdarzeń zdalnych
-	MT.__namecall = newcclosure(function(self, ...)
-		local Method = getnamecallmethod()
-		local Args = {
-			...
-		}
-		
-		-- Sprawdza, czy wywołanie pochodzi od "FireServer" i dotyczy obrażeń od upadku
-		if Method == "FireServer" and (tostring(self):find("FallDamage") or tostring(self):find("FlllD") or tostring(self):find("FlllH")) then
-			-- Jeśli flaga jest włączona, zatrzymaj wywołanie, zwracając nieskończone oczekiwanie
-			if NoFallDamage_Enabled then
-				return wait(9e9)
-			end
-		end
-		
-		-- Przekazuje inne wywołania bez zmian
-		return NameCall(self, ...)
-	end)
-end
-
-local function NoFallDamage_Disable()
-	if not NoFallDamage_Enabled then
-		return
-	end
-	NoFallDamage_Enabled = false
-	
-	-- Przywraca oryginalną metatabelę
-	MT.__namecall = NameCall
-end
-
--- Przykład użycia - przełączanie za pomocą klawisza 'K'
-local UserInputService = game:GetService("UserInputService")
-UserInputService.InputBegan:Connect(function(input, gameProcessed)
-	if gameProcessed then
-		return
-	end
-	
-	if input.KeyCode == Enum.KeyCode.K then
-		if NoFallDamage_Enabled then
-			NoFallDamage_Disable()
-		else
-			NoFallDamage_Enable()
-		end
-	end
-end)
 
 --============================ FullBright ============================--
 local FullBright_Enabled = false
@@ -3540,7 +3482,6 @@ EQR_UI.DefaultCategory = "Combat"
 EQR_UI.KeyBinds = {
     fly = Fly_Bind,
     noclip = Noclip_Bind,
-    nofalldamage = nofalldamage_Bind,
     FullBright = FullBright_Bind,
     autofarm = Autofarm_Bind,
     autoPickupMoney = nil,
@@ -3742,7 +3683,6 @@ function EQR_UI:Initialize()
     table.insert(self.CategoryFrames.Movement, createToggleRowFrame("Fly", true, function() return Fly_Enabled end, Fly_Enable, Fly_Disable, function() return k.fly end, function(val) k.fly=val; Fly_Bind=val end))
     table.insert(self.CategoryFrames.Movement, createToggleRowFrame("Noclip", true, function() return Noclip_Enabled end, Noclip_Enable, Noclip_Disable, function() return k.noclip end, function(val) k.noclip=val; Noclip_Bind=val end))
     table.insert(self.CategoryFrames.Movement, createToggleRowFrame("Infinite Stamina", true, function() return isInfiniteStaminaEnabled end, InfiniteStamina_Enable, InfiniteStamina_Disable, function() return k.infiniteStamina end, function(val) k.infiniteStamina=val end))
-    table.insert(self.CategoryFrames.Movement, createToggleRowFrame("Infinite Stamina", true, function() return NoFallDamage_Enabled end, NoFallDamage_Enable, NoFallDamage_Disable, function() return k.nofalldamage end, function(val) k.nofalldamage=val end))
 
     -- Visuals
     table.insert(self.CategoryFrames.Visuals, createToggleRowFrame("ESP (55 STUDS)", true, function() return ESP_Enabled end, ESP_Enable, ESP_Disable, function() return k.esp end, function(val) k.esp=val end))
