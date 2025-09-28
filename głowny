@@ -927,39 +927,6 @@ local function Fov_Disable()
     Camera.FieldOfView = Original_Fov
 end
 
--- Poniżej znajduje się przykład, jak przełączać efekt za pomocą klawisza 'K'
--- i zmieniać wartość FOV za pomocą klawiszy 'L' i 'P'.
-local UserInputService = game:GetService("UserInputService")
-UserInputService.InputBegan:Connect(function(input, gameProcessed)
-    if gameProcessed then
-        return
-    end
-    
-    if input.KeyCode == Enum.KeyCode.K then
-        if Fov_Enabled then
-            Fov_Disable()
-        else
-            Fov_Enable()
-        end
-    end
-    
-    -- Zwiększ FOV o 5
-    if input.KeyCode == Enum.KeyCode.L then
-        Fov_Value = math.min(120, Fov_Value + 5) -- Maksymalna wartość FOV to 120
-        if Fov_Enabled then
-            Camera.FieldOfView = Fov_Value
-        end
-    end
-    
-    -- Zmniejsz FOV o 5
-    if input.KeyCode == Enum.KeyCode.P then
-        Fov_Value = math.max(10, Fov_Value - 5) -- Minimalna wartość FOV to 10
-        if Fov_Enabled then
-            Camera.FieldOfView = Fov_Value
-        end
-    end
-end)
-
 --============================ Noclip ============================--
 -- Serwisy Roblox
 local RunService = game:GetService("RunService")
