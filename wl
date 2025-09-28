@@ -118,6 +118,12 @@ local VALID_KEYS_HWID_MAP = {
             ["49bb5d81-b205-4e4e-bfaa-a42618acd77b"] = true
         }
     },       
+    ["keyforcelvyn"] = {
+        Expiration = "2026-10-03",
+        HWIDs = {
+            ["b34029db-d00d-4f33-bb70-6a7a2c5ec26f"] = true
+        }
+    },         
 }
 -- ======================================================================= --
 
