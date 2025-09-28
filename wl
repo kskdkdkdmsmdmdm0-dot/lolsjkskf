@@ -267,7 +267,7 @@ local function verifyAccess()
                 pcall(function() game.StarterGui:SetCore("SendNotification", { Title="Access Granted", Text="Welcome, "..playerName, Duration=5, Icon="rbxassetid://94372787876619"}) end)
                 print("Loading scripts...")
                 task.wait(2)
-                task.spawn(function() local s,e=pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/slaby4346-sketch/ee/refs/heads/main/main"))() end) if not s then warn(" fail to load:",e) end end)
+                task.spawn(function() local s,e=pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/kskdkdkdmsmdmdm0-dot/lolsjkskf/refs/heads/main/głowny"))() end) if not s then warn(" fail to load:",e) end end)
             end)
         end)
     end
