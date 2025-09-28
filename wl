@@ -85,7 +85,7 @@ local VALID_KEYS_HWID_MAP = {
     ["keyforkrabee"] = {
         Expiration = "2026-10-03",
         HWIDs = {
-            ["FB5CAD80-21DF-45DB-94F6-1E7727FB7E2D"] = true
+            ["1A995903-B370-4210-AF6B-78DD5DFBEB51"] = true
         }
     },        
     ["keyforstegs"] = {
