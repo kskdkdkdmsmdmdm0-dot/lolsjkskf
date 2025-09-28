@@ -2137,7 +2137,7 @@ local function openSafe(safeModel)
 		wait(0.2) -- Lekko zwiększone opóźnienie dla stabilności
 	end
 	
-	wait(8) -- Zmniejszony czas oczekiwania po otwarciu sejfu
+	wait(7) -- Zmniejszony czas oczekiwania po otwarciu sejfu
 end
 
 
