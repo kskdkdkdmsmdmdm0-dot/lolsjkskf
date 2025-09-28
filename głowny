@@ -1618,14 +1618,8 @@ task.spawn(function()
 	while task.wait(5) do -- Check ping every 5 seconds
 		local ping = getPing()
 		if ping > pingThreshold then
-			if not isPingHigh then
-				print("Warning: High ping detected ("..ping.."ms). Pausing autofarm.")
-			end
 			isPingHigh = true
 		else
-			if isPingHigh then
-				print("Ping returned to normal ("..ping.."ms). Resuming autofarm.")
-			end
 			isPingHigh = false
 		end
 	end
@@ -2020,7 +2014,6 @@ local function Autofarm_Enable()
 	_G.ActivateShadow() -- Użycie nowej nazwy
 	Collector_Activate() -- Użycie nowej nazwy
 	--Noclip_Enable() -- Włącz Noclip
-	print("Autofarm ENABLED.") -- Dodatkowy log
 end
 
 -- Main function to disable the autofarm and invisibility
@@ -2031,7 +2024,6 @@ local function Autofarm_Disable()
 	_G.DeactivateShadow() -- Użycie nowej nazwy
 	Collector_Deactivate() -- Użycie nowej nazwy
 	--Noclip_Disable() -- Wyłącz Noclip
-	print("Autofarm DISABLED.") -- Dodatkowy log
 end
 
 -- NOWA, WZMOCNIONA LOGIKA RESPONSU
@@ -2066,7 +2058,6 @@ localPlayer.CharacterAdded:Connect(function(character)
 	
 	-- Wymuś ponowną aktywację, aby zsynchronizować stan ze skryptami
 	Autofarm_Enable()
-	print("Autofarm state RE-SYNCHRONIZED after respawn.")
 end)
 
 
@@ -2077,12 +2068,10 @@ local function teleportTo(targetPart)
 	local char = localPlayer.Character or localPlayer.CharacterAdded:Wait()
 	local hrp = char:WaitForChild("HumanoidRootPart", 10)
 	if not hrp then
-		print("Teleport failed: Could not find HumanoidRootPart.")
 		return false
 	end
 
 	if not (targetPart and targetPart:IsA("BasePart")) then
-		print("Teleport failed: Invalid targetPart.")
 		return false
 	end
 
@@ -2111,17 +2100,14 @@ local function teleportTo(targetPart)
 			local currentDistance = (hrp.Position - targetPos).Magnitude
 			if currentDistance > 5 then -- Jeśli gracz został odrzucony/przesunięty
 				isStable = false
-				print("INFO: Player after teleport not stable. Distance: " .. math.floor(currentDistance))
 				break -- Przerwij sprawdzanie, teleportacja nieudana
 			end
 		end
 
 		if isStable then
-			print("Autofarm: Teleport successful and position stable.")
 			success = true
 		else
 			attempts = attempts + 1
-			print("Autofarm: Position not stable after teleport, retrying  " .. attempts + 1)
 			wait(1) -- Odczekaj chwilę przed kolejną próbą
 		end
 	end
