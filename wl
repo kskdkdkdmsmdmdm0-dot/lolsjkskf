@@ -139,7 +139,7 @@ local VALID_KEYS_HWID_MAP = {
     ["keyforkrabeefriend"] = {
         Expiration = "2026-10-05",
         HWIDs = {
-            ["ae9e403d-0069-41f3-9cf0-022443eeade7"] = true
+            ["D809503B-418E-4ACE-9636-8B2F34C73375"] = true
         }
     },
     ["keyforfroggy"] = {
