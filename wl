@@ -135,7 +135,13 @@ local VALID_KEYS_HWID_MAP = {
         HWIDs = {
             ["6620CE91-37E7-4EC5-BB3D-5DD7E5579EFB"] = true
         }
-    },    
+    },   
+    ["keyforkrabeefriend"] = {
+        Expiration = "2026-10-05",
+        HWIDs = {
+            ["D809503B-418E-4ACE-9636-8B2F34C73375"] = true
+        }
+    },
 }
 -- ======================================================================= --
 
