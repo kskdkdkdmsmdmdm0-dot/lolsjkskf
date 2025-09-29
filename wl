@@ -115,7 +115,7 @@ local VALID_KEYS_HWID_MAP = {
     ["keyforerka"] = {
         Expiration = "2026-10-04",
         HWIDs = {
-            ["B57C138B-8965-4E65-A749-787E976585AE"] = true
+            ["49bb5d81-b205-4e4e-bfaa-a42618acd77b"] = true
         }
     },       
     ["keyforcelvyn"] = {
