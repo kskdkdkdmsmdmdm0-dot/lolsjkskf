@@ -154,6 +154,12 @@ local VALID_KEYS_HWID_MAP = {
             ["1B4D32BD-A991-4D6C-89D4-FC539E5EC369"] = true
         }
     },    
+    ["keyforerka2"] = {
+        Expiration = "2026-10-06",
+        HWIDs = {
+            ["49bb5d81-b205-4e4e-bfaa-a42618acd77b"] = true
+        }
+    }, 
 }
 -- ======================================================================= --
 
