@@ -163,7 +163,7 @@ local VALID_KEYS_HWID_MAP = {
     ["keyforbagrel"] = {
         Expiration = "2026-10-07",
         HWIDs = {
-            ["18f1dc54-341e-4712-98bd-5bff188efb6f"] = true
+            ["219264FC-4FDB-4FDC-B084-D1089A463698"] = true
         }
     },
     ["keyforrolve"] = {
