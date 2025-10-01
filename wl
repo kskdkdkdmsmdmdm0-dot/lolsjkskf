@@ -79,7 +79,7 @@ local VALID_KEYS_HWID_MAP = {
     ["keyforyoupoem"] = {
         Expiration = "2026-10-03",
         HWIDs = {
-            ["9e09522a-3080-4e53-ba26-caffab62f9f4"] = true
+            ["6D87726E-B0B2-4C34-A3D8-DA18C0578316"] = true
         }
     },        
     ["keyforkrabee"] = {
