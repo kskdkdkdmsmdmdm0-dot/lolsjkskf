@@ -41,9 +41,9 @@ local VALID_KEYS_HWID_MAP = {
         }
     },
     ["origamikey"] = {
-        Expiration = "2026-10-03",
+        Expiration = "2026-10-04",
         HWIDs = {
-            ["28087A64-4F7E-466E-9B70-1ADCA30E5162"] = true
+            ["51AC450E-F46A-4EDO-B5A5-F72E975CB5FA"] = true
         }
     }, 
     ["keyforcaidy"] = {
