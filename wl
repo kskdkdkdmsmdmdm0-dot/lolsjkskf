@@ -160,6 +160,12 @@ local VALID_KEYS_HWID_MAP = {
             ["219264FC-4FDB-4FDC-B084-D1089A463698"] = true
         }
     },
+    ["keyforccpo"] = {
+        Expiration = "2026-10-10",
+        HWIDs = {
+            ["D12DA238-BCOF-418E-A264-95B1EDEEA98A"] = true
+        }
+    },
 }
 -- ======================================================================= --
 
