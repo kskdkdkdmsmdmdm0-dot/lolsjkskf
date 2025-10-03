@@ -35,9 +35,9 @@ local VALID_KEYS_HWID_MAP = {
         }
     },                
     ["keyforstegs"] = {
-        Expiration = "2026-10-03",
+        Expiration = "2026-10-04",
         HWIDs = {
-            ["EEF2DD94-ADB3-4B0D-8C0C-9809AC444AD0"] = true
+            ["3F4CA501-63A5-4C4E-9E4E-04C9B7CAD820"] = true
         }
     },      
     ["keyforzenxth"] = {
