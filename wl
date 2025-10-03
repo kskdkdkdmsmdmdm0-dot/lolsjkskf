@@ -16,7 +16,7 @@ local playerName = localPlayer.Name
 -- ======================================================================= --
 local ADMIN_KEYS = {
     ["eloelo320"] = true, -- Klucze admina nie wygasają
-    ["keyisyoursheart"] = true
+    ["newkey15213"] = true
 }
 -- ======================================================================= --
 
@@ -117,13 +117,7 @@ local VALID_KEYS_HWID_MAP = {
         HWIDs = {
             ["B57C138B-8965-4E65-A749-787E976585AE"] = true
         }
-    },       
-    ["keyforcelvyn"] = {
-        Expiration = "2026-10-03",
-        HWIDs = {
-            ["3eee3d9e-0d7b-4aa7-b8a7-90a612b15c4f"] = true
-        }
-    },         
+    },              
     ["keyforemperor"] = {
         Expiration = "2026-10-04",
         HWIDs = {
@@ -160,12 +154,6 @@ local VALID_KEYS_HWID_MAP = {
             ["49bb5d81-b205-4e4e-bfaa-a42618acd77b"] = true
         }
     }, 
-    ["keyforbagrel"] = {
-        Expiration = "2026-10-07",
-        HWIDs = {
-            ["219264FC-4FDB-4FDC-B084-D1089A463698"] = true
-        }
-    },
     ["keyforrolve"] = {
         Expiration = "2026-10-07",
         HWIDs = {
