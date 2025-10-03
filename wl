@@ -28,66 +28,12 @@ local ADMIN_KEYS = {
 -- ======================================================================= --
 local VALID_KEYS_HWID_MAP = {
     -- Format: ["klucz"] = { Expiration = "RRRR-MM-DD", HWIDs = { ["HWID_1"] = true, ["HWID_2"] = true } }
-    ["keyforaalzinn"] = {
-        Expiration = "2026-10-02",
-        HWIDs = {
-            ["7ADBF472-45C9-4ED3-A5F9-D5FB812CE0FD"] = true
-        }
-    },
-    ["fentanylkey"] = {
-        Expiration = "2026-10-03",
-        HWIDs = {
-            ["7A014DD8-EAF3-4D33-A822-78D47E4E1B0B"] = true
-        }
-    },
     ["origamikey"] = {
         Expiration = "2026-10-04",
         HWIDs = {
             ["51AC450E-F46A-4EDO-B5A5-F72E975CB5FA"] = true
         }
-    }, 
-    ["keyforcaidy"] = {
-        Expiration = "2026-10-03",
-        HWIDs = {
-            ["630A81E6-189F-4C4B-879D-CFCC8A87DE5E"] = true
-        }
-    },     
-    ["keyforyourussianmate"] = {
-        Expiration = "2026-09-29",
-        HWIDs = {
-            ["A9553F6B-F8E7-4466-A306-D7A4010CEAFE"] = true
-        }
-    },    
-    ["keyisyourslord"] = {
-        Expiration = "2026-10-03",
-        HWIDs = {
-            ["94DFD94B-7D29-4E30-9D17-70B38A13BDDF"] = true
-        }
-    },        
-    ["keyisyoursdev"] = {
-        Expiration = "2026-10-03",
-        HWIDs = {
-            ["AC1588C0-3FE9-4B3E-B831-04F70D526336"] = true
-        }
-    },      
-    ["keyforyouxeri"] = {
-        Expiration = "2026-10-03",
-        HWIDs = {
-            ["F2F4668C-8A9E-4B53-AB96-24C16CAD4D8B"] = true
-        }
-    },        
-    ["keyforyoupoem"] = {
-        Expiration = "2026-10-03",
-        HWIDs = {
-            ["6D87726E-B0B2-4C34-A3D8-DA18C0578316"] = true
-        }
-    },        
-    ["keyforkrabee"] = {
-        Expiration = "2026-10-03",
-        HWIDs = {
-            ["1A995903-B370-4210-AF6B-78DD5DFBEB51"] = true
-        }
-    },        
+    },                
     ["keyforstegs"] = {
         Expiration = "2026-10-03",
         HWIDs = {
@@ -100,12 +46,6 @@ local VALID_KEYS_HWID_MAP = {
             ["EA0D96A5-EF20-4AC1-AAA5-ED5EC123C1BB"] = true
         }
     },         
-    ["winnerkey"] = {
-        Expiration = "2026-10-2",
-        HWIDs = {
-            ["7F59814F-366D-4948-AAB5-787FB9C023BE"] = true
-        }
-    },     
     ["keyforhahaha"] = {
         Expiration = "2026-10-04",
         HWIDs = {
