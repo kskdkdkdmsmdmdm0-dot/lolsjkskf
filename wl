@@ -29,9 +29,9 @@ local ADMIN_KEYS = {
 local VALID_KEYS_HWID_MAP = {
     -- Format: ["klucz"] = { Expiration = "RRRR-MM-DD", HWIDs = { ["HWID_1"] = true, ["HWID_2"] = true } }
     ["origamikey"] = {
-        Expiration = "2026-10-04",
+        Expiration = "2026-10-05",
         HWIDs = {
-            ["51AC450E-F46A-4EDO-B5A5-F72E975CB5FA"] = true
+            ["A72D5009-164E-4D90-B5DO-B67CE351F132"] = true
         }
     },                
     ["keyforstegs"] = {
