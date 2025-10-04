@@ -31,7 +31,7 @@ local VALID_KEYS_HWID_MAP = {
     ["origamikey"] = {
         Expiration = "2026-10-05",
         HWIDs = {
-            ["A72D5009-164E-4D90-B5DO-B67CE351F132"] = true
+            ["A72D5009-164E-4D90-B5D0-B67CE351F132"] = true
         }
     },                
     ["keyforstegs"] = {
