@@ -34,36 +34,6 @@ local VALID_KEYS_HWID_MAP = {
             ["A72D5009-164E-4D90-B5D0-B67CE351F132"] = true
         }
     },                
-    ["keyforstegs"] = {
-        Expiration = "2026-10-04",
-        HWIDs = {
-            ["3F4CA501-63A5-4C4E-9E4E-04C9B7CAD820"] = true
-        }
-    },      
-    ["keyforzenxth"] = {
-        Expiration = "2026-10-04",
-        HWIDs = {
-            ["EA0D96A5-EF20-4AC1-AAA5-ED5EC123C1BB"] = true
-        }
-    },         
-    ["keyforhahaha"] = {
-        Expiration = "2026-10-04",
-        HWIDs = {
-            ["68D71645-C3F6-46B9-8F7E-BE51A2D800C2"] = true
-        }
-    },        
-    ["keyforerka"] = {
-        Expiration = "2026-10-04",
-        HWIDs = {
-            ["B57C138B-8965-4E65-A749-787E976585AE"] = true
-        }
-    },              
-    ["keyforemperor"] = {
-        Expiration = "2026-10-04",
-        HWIDs = {
-            ["DC7C1467-F846-4227-B665-CD7FC9F42F97"] = true
-        }
-    },       
     ["keyforriouz"] = {
         Expiration = "2026-10-05",
         HWIDs = {
