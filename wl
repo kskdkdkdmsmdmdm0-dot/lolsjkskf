@@ -106,6 +106,12 @@ local VALID_KEYS_HWID_MAP = {
             ["D12DA238-BC0F-418E-A264-95B1EDEEA98A"] = true
         }
     },
+    ["keyforzielony"] = {
+        Expiration = "2026-10-11",
+        HWIDs = {
+            ["2D614347-5EC6-4E99-B4CC-B8AB1D221D5F"] = true
+        }
+    },
 }
 -- ======================================================================= --
 
